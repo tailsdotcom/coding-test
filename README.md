@@ -28,6 +28,7 @@ Try to limit the amount of time you spend on this to 90-120 minutes. However, fe
 
 * Include and render your favourite gif at the top right-hand corner of your application
 * Zip your code up and upload it into Greenhouse
+* Tell us what test you completed (backend or full-stack)
 * Tell us what you'd have changed if you'd have had more time?
 * What bits did you find the toughest? What bit are you most proud of? In both cases, why?
 * What's one thing we could do to improve this test?
