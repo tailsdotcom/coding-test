@@ -6,6 +6,8 @@ Think of this as an open source project. How would this have to look like, in or
 
 Try to limit the amount of time you spend on this to 90-120 minutes. However, feel free to spend more - just make sure you're happy with your submission!
 
+_Hint_: we're looking for a high-quality submission with great application architecture, not a "just get it done"-like approach.
+
 ## What to do
 
 ### If you're applying for a backend role
