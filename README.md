@@ -6,7 +6,7 @@ Think of this as an open source project. How would this have to look like, in or
 
 Try to limit the amount of time you spend on this to 90-120 minutes. However, feel free to spend more - just make sure you're happy with your submission!
 
-_Hint_: we're looking for a high-quality submission with great application architecture, not a "just get it done"-like approach.
+_Hint_: we're looking for a high-quality submission with great application architecture, not a "just get it done"-like approach. Stay away from frameworks/boilerplates that handle everything for you - or use them only as a thin layer - so we can see how you structure applications yourself.
 
 ## What to do
 
