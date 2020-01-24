@@ -1,3 +1,4 @@
+import copy
 import json
 import sys
 from pathlib import Path
@@ -39,7 +40,7 @@ class Middleware:
 
     def sort_array_alphabetically_by_name(self):
         try:
-            self.json_stores = self.helper_methods.sort_json_alphabetically_by_key(self.json_stores, "name")
+            self.json_stores = self.helper_methods.sort_json_by_key(self.json_stores, "name")
             self.save_json_stores()
             return self.json_stores
         except errors.MiddlewareInputError:
@@ -47,7 +48,7 @@ class Middleware:
 
     def sort_array_alphabetically_by_postcode(self):
         try:
-            self.json_stores = self.helper_methods.sort_json_alphabetically_by_key(self.json_stores, "postcode")
+            self.json_stores = self.helper_methods.sort_json_by_key(self.json_stores, "postcode")
             self.save_json_stores()
             return self.json_stores
         except errors.MiddlewareInputError:
@@ -81,4 +82,33 @@ class Middleware:
         self.save_json_stores()
         return self.json_stores
 
-
+    def nearest_store_lookup(self, postcode: str, max_distance):
+        try:
+            user_location = self.helper_methods.single_search_postcodes_io(postcode)
+            user_location = user_location[postcode]
+            distances = {}
+            for store in self.json_stores:
+                if store["latitude"] and store["longitude"]:
+                    distance = self.helper_methods.haversine_formula(
+                        user_location["latitude"], store["latitude"], user_location["longitude"], store["longitude"]
+                    )
+                    distances[store["postcode"]] = distance
+            json_stores_copy = copy.deepcopy(self.json_stores)
+            for store in json_stores_copy:
+                if store["postcode"] in distances:
+                    store["distance_to_store_in_km"] = distances[store["postcode"]]
+                else:
+                    store["distance_to_store_in_km"] = None
+            # remove any None value for distance_to_store_in_km
+            json_stores_copy[:] = [d for d in json_stores_copy if d.get("distance_to_store_in_km")]
+            # remove any value that are greater than max_distance for distance_to_store_in_km
+            json_stores_copy[:] = [
+                d for d in json_stores_copy if d.get("distance_to_store_in_km") < float(max_distance)
+            ]
+            # order by longitude i.e. North to south
+            json_stores_copy = self.helper_methods.sort_json_by_key(json_stores_copy, "latitude")
+            return json_stores_copy
+        except errors.MiddlewareInputError:
+            raise errors.MiddlewareInputError
+        except errors.MiddlewareInternalError:
+            raise errors.MiddlewareInternalError

@@ -23,10 +23,10 @@ class SortedName(Resource):
     def get():
         try:
             return {"status": "success", "data": MIDDLEWARE.sort_array_alphabetically_by_name(), "message": None}, 200
-        except middleware.errors.MiddlewareInputError as error:
-            return {"status": "failure", "data": None, "message": error}, 400
-        except middleware.errors.MiddlewareInternalError as error:
-            return {"status": "error", "data": None, "message": error}, 500
+        except middleware.errors.MiddlewareInputError:
+            return {"status": "failure", "data": None, "message": None}, 400
+        except middleware.errors.MiddlewareInternalError:
+            return {"status": "error", "data": None, "message": None}, 500
 
 
 @NAME_SPACE_ARRAY.route("/postcode")
@@ -39,26 +39,46 @@ class SortedPostcode(Resource):
                 {"status": "success", "data": MIDDLEWARE.sort_array_alphabetically_by_postcode(), "message": None},
                 200,
             )
-        except middleware.errors.MiddlewareInputError as error:
-            return {"status": "failure", "data": None, "message": error}, 400
-        except middleware.errors.MiddlewareInternalError as error:
-            return {"status": "error", "data": None, "message": error}, 500
+        except middleware.errors.MiddlewareInputError:
+            return {"status": "failure", "data": None, "message": None}, 400
+        except middleware.errors.MiddlewareInternalError:
+            return {"status": "error", "data": None, "message": None}, 500
 
 
 @NAME_SPACE_POSTCODE.route("/")
-class PostcodeSearch(Resource):
+class AllPostcodeSearch(Resource):
     @staticmethod
     @APP.doc(responses=GENERIC_RESPONSES)
     def get():
         try:
+            return {"status": "success", "data": MIDDLEWARE.postcodes_io_lookup(), "message": None}, 200
+        except middleware.errors.MiddlewareInputError:
+            return {"status": "failure", "data": None, "message": None}, 400
+        except middleware.errors.MiddlewareInternalError:
+            return {"status": "error", "data": None, "message": None}, 500
+
+
+@NAME_SPACE_POSTCODE.route("/<string:postcode>/<string:max_distance>")
+@NAME_SPACE_POSTCODE.param("postcode", "User Location")
+@NAME_SPACE_POSTCODE.param("max_distance", "Maximum Distance")
+class NearestStoreSearch(Resource):
+    @staticmethod
+    @APP.doc(responses=GENERIC_RESPONSES)
+    def get(postcode, max_distance):
+        try:
             return (
-                {"status": "success", "data": MIDDLEWARE.postcodes_io_lookup(), "message": None},
+                {
+                    "status": "success",
+                    "data": [MIDDLEWARE.nearest_store_lookup(postcode, max_distance)],
+                    "message": None,
+                },
                 200,
             )
-        except middleware.errors.MiddlewareInputError as error:
-            return {"status": "failure", "data": None, "message": error}, 400
-        except middleware.errors.MiddlewareInternalError as error:
-            return {"status": "error", "data": None, "message": error}, 500
+
+        except middleware.errors.MiddlewareInputError:
+            return {"status": "failure", "data": None, "message": None}, 400
+        except middleware.errors.MiddlewareInternalError:
+            return {"status": "error", "data": None, "message": None}, 500
 
 
 if __name__ == "__main__":

@@ -35,6 +35,13 @@ Start up the application
 ```
 python main.py
 ```
+##View the application
+To view the application running go to: [http://localhost:5000](http://localhost:5000)
+- Running `GET /sorted/name` will render the stores list in alphabetical order by name
+- Running `GET /sorted/postcode` will render the stores list in alphabetical order by postcode
+- Running `GET /postcode/` will fetch the latitude and longitude from postcodes.io and update the stores list
+- Running `GET /postcode/{postcode}/{max_distance}` will return a list of stores ordered by North/South that have the distance from the submitted postcode and within the maximum specified distance
+
 
 ##Requirements
 - Create a new Python-based application (any framework is fine, we prefer Flask)
