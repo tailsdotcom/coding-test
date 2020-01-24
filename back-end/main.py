@@ -8,7 +8,8 @@ FLASK_APP = Flask(__name__)
 CORS(FLASK_APP, resources={r"/*": {"origins": "*"}})
 FLASK_APP.config["CORS_HEADERS"] = "Content-Type"
 APP = Api(app=FLASK_APP, version="1.0", title="Tails.com API")
-NAME_SPACE_ARRAY = APP.namespace("sorted", description="API Info")
+NAME_SPACE_ARRAY = APP.namespace("sorted", description="Sorts the list")
+NAME_SPACE_POSTCODE = APP.namespace("postcode", description="Postcode related queries")
 FLASK_APP.config.SWAGGER_UI_DOC_EXPANSION = "list"
 MIDDLEWARE = middleware.Middleware("stores.json")
 PARSER = reqparse.RequestParser()
@@ -36,6 +37,22 @@ class SortedPostcode(Resource):
         try:
             return (
                 {"status": "success", "data": MIDDLEWARE.sort_array_alphabetically_by_postcode(), "message": None},
+                200,
+            )
+        except middleware.errors.MiddlewareInputError as error:
+            return {"status": "failure", "data": None, "message": error}, 400
+        except middleware.errors.MiddlewareInternalError as error:
+            return {"status": "error", "data": None, "message": error}, 500
+
+
+@NAME_SPACE_POSTCODE.route("/")
+class PostcodeSearch(Resource):
+    @staticmethod
+    @APP.doc(responses=GENERIC_RESPONSES)
+    def get():
+        try:
+            return (
+                {"status": "success", "data": MIDDLEWARE.postcodes_io_lookup(), "message": None},
                 200,
             )
         except middleware.errors.MiddlewareInputError as error:

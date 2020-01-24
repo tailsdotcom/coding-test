@@ -39,12 +39,46 @@ class Middleware:
 
     def sort_array_alphabetically_by_name(self):
         try:
-            return self.helper_methods.sort_json_alphabetically_by_key(self.json_stores, "name")
+            self.json_stores = self.helper_methods.sort_json_alphabetically_by_key(self.json_stores, "name")
+            self.save_json_stores()
+            return self.json_stores
         except errors.MiddlewareInputError:
             raise errors.MiddlewareInputError
 
     def sort_array_alphabetically_by_postcode(self):
         try:
-            return self.helper_methods.sort_json_alphabetically_by_key(self.json_stores, "postcode")
+            self.json_stores = self.helper_methods.sort_json_alphabetically_by_key(self.json_stores, "postcode")
+            self.save_json_stores()
+            return self.json_stores
         except errors.MiddlewareInputError:
             raise errors.MiddlewareInputError
+
+    def postcodes_io_lookup(self):
+        search_list = []
+        for store in self.json_stores:
+            # if the store already has longitude & latitude skip as it has already been searched for
+            if "longitude" not in store or "latitude" not in store:
+                search_list.append(store["postcode"])
+
+        try:
+            returned_search_list = self.helper_methods.bulk_search_postcodes_io(search_list)
+        except errors.MiddlewareInputError:
+            raise errors.MiddlewareInputError
+        except errors.MiddlewareInternalError:
+            raise errors.MiddlewareInternalError
+
+        for store in self.json_stores:
+            if store["postcode"] in returned_search_list:
+                if returned_search_list[store["postcode"]]:
+                    store["postcode_validity"] = True
+                    store["longitude"] = returned_search_list[store["postcode"]]["longitude"]
+                    store["latitude"] = returned_search_list[store["postcode"]]["latitude"]
+                else:
+                    store["postcode_validity"] = False
+                    store["longitude"] = None
+                    store["latitude"] = None
+
+        self.save_json_stores()
+        return self.json_stores
+
+
