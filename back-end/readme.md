@@ -29,7 +29,7 @@ docs\make.bat html
 ```
 Run the tests
 ```
-coverage run -m pytest && coverage report -m
+coverage run --source=middleware --branch -m pytest && coverage report -m
 ```
 Start up the application
 ```

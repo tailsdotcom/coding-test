@@ -24,12 +24,13 @@ class HelperMethods:
         :raises: middleware.errors.MiddlewareInputError
         """
         try:
-            # return sorted(json_list, key=lambda k: k[key_to_sort_by], reverse=reverse_order)
             return sorted(
                 json_list, key=lambda k: (k[key_to_sort_by] is None, k[key_to_sort_by]), reverse=reverse_order
             )
         except KeyError:
             raise errors.MiddlewareInputError("Key Error")
+        except TypeError:
+            raise errors.MiddlewareInputError("Type Error")
 
     @staticmethod
     def bulk_search_postcodes_io(list_of_postcodes: list) -> dict:
@@ -110,7 +111,7 @@ class HelperMethods:
             raise errors.MiddlewareInternalError
 
     @staticmethod
-    def haversine_formula(latitude_1, latitude_2, longitude_1, longitude_2):
+    def haversine_formula(latitude_1: float, latitude_2: float, longitude_1: float, longitude_2: float) -> float:
         """Returns the distance between two co-ordinates longitude and latitude in km
 
         :param latitude_1: latitude of the first ordinate
