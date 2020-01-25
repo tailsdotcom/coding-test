@@ -125,16 +125,19 @@ class HelperMethods:
         :return: the distance between the points in km
         :rtype: float
         """
-        earth_radius_meters = 6371e3
-        latitude_1_radians = math.radians(latitude_1)
-        latitude_2_radians = math.radians(latitude_2)
-        delta_latitude = math.radians(latitude_2 - latitude_1)
-        delta_longitude = math.radians(longitude_2 - longitude_1)
-        square_of_half_chord_length = math.sin(delta_latitude / 2) * math.sin(delta_latitude / 2) + math.cos(
-            latitude_1_radians
-        ) * math.cos(latitude_2_radians) * math.sin(delta_longitude / 2) * math.sin(delta_longitude / 2)
-        angular_distance_radians = 2 * math.atan2(
-            math.sqrt(square_of_half_chord_length), math.sqrt(1 - square_of_half_chord_length)
-        )
-        distance_km = (earth_radius_meters * angular_distance_radians) / 1000
-        return float("%.2f" % distance_km)
+        try:
+            earth_radius_meters = 6371e3
+            latitude_1_radians = math.radians(latitude_1)
+            latitude_2_radians = math.radians(latitude_2)
+            delta_latitude = math.radians(latitude_2 - latitude_1)
+            delta_longitude = math.radians(longitude_2 - longitude_1)
+            square_of_half_chord_length = math.sin(delta_latitude / 2) * math.sin(delta_latitude / 2) + math.cos(
+                latitude_1_radians
+            ) * math.cos(latitude_2_radians) * math.sin(delta_longitude / 2) * math.sin(delta_longitude / 2)
+            angular_distance_radians = 2 * math.atan2(
+                math.sqrt(square_of_half_chord_length), math.sqrt(1 - square_of_half_chord_length)
+            )
+            distance_km = (earth_radius_meters * angular_distance_radians) / 1000
+            return float("%.2f" % distance_km)
+        except TypeError:
+            raise errors.MiddlewareInputError

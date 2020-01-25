@@ -1,3 +1,6 @@
+"""Contains all errors raised in the middleware module"""
+
+
 class MiddlewareError(Exception):
     """All exceptions raised in this module use this as the base exception class."""
 
