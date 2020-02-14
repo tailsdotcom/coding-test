@@ -31,7 +31,7 @@ _Hint_: we're looking for a high-quality submission with great application archi
 
 ### Finally
 
-* Zip your code up and upload it into Greenhouse
+* Zip your code up and upload it into Greenhouse (our recruitment system) using the link provided at the bottom of the email you received
 * Tell us which test you completed (backend or full-stack)
 * Tell us what you would have done differently if you'd have had more time?
 * What bits did you find the toughest? What bit are you most proud of? In both cases, why?
