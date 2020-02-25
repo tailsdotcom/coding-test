@@ -25,7 +25,7 @@ _Hint_: we're looking for a high-quality submission with great application archi
 ### If you're applying for a full stack role
 
 * Using your favourite front-end framework (we'd prefer Vue, React or Ember though) on the user-facing side
-* Build a frontend that renders a text field for the query and the list of stores that match it, following the layout in the included wireframe (we still need to add one to the repo!)
+* Build a frontend that renders a text field for the query and the list of stores that match it
 * Add suggestions to the query field as you type, with a debounce effect of 100ms and a minimum of 2 characters
 * Limit the results to 3 and lazy load the rest
 
