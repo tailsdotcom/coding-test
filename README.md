@@ -14,7 +14,7 @@ _Hint_: we're looking for a high-quality submission with great application archi
 
 * Create a new Python-based application (any framework is fine, we prefer Flask)
 * Build an API that returns stores from the `stores.json` file, based on a given search string in a performant way and unit test it, i.e. return "Newhaven" when searching for "hav" - make sure the search allows to use both city name and postcode
-* Order the results by matching postcode first and then matching city names, i.e. "br" would have "Orpington" as the 1st result (as its postcoxde is "BR5 3RP"), "Bracknell" as the 2nd
+* Order the results by matching postcode first and then matching city names, i.e. "br" would have "Orpington" as the 1st result (as its postcode is "BR5 3RP"), "Bracknell" as the 2nd
 
 
 ### If you're applying for a backend role
