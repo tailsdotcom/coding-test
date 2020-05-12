@@ -4,11 +4,11 @@
 
 Think of this as an open source project. How would this have to look in order for you to be impressed with it, if you were to find it on GitHub? Now go and do that.
 
-Try to limit the amount of time you spend on this to 90-120 minutes. Feel free to spend more time - make sure you are happy with your submission!
+Please spend at least 90 minutes on this test. Feel free to take more time if you wish - make sure you are happy with your submission!
 
 _Hint_: we are looking for a high-quality submission with great application architecture. Not a "get it done" approach. Stay away from frameworks and boilerplates that handle everything for you. If you do use a framework, only use it as a thin layer so we can see how you structure applications yourself.  
 
-Remember that this test is your opportunity to show us how you think. Be clear about how you make decisions in your code, wether that is with comments, tests or how you name things.
+Remember that this test is your opportunity to show us how you think. Be clear about how you make decisions in your code, whether that is with comments, tests, or how you name things.
 
 ## What to do
 
@@ -33,8 +33,7 @@ Remember that this test is your opportunity to show us how you think. Be clear a
 
 * Zip your code up and upload it to Greenhouse (our recruitment system). Use the link provided at the bottom of the email you received.
 * Provide answers for the following questions with your submission:
-
-1. Which test did you complete? (backend or full-stack)
-2. What you would have done differently if you had more time?
-3. What part did you find the hardest? What part are you most proud of? In both cases, why?
-4. What is one thing we could do to improve this test?
+  1. Which test did you complete? (backend or full-stack)
+  2. If you had chosen to spend more time on this test, what would you have done differently?
+  3. What part did you find the hardest? What part are you most proud of? In both cases, why?
+  4. What is one thing we could do to improve this test?
