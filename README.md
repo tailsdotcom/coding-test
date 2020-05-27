@@ -2,11 +2,13 @@
 
 ## About this task
 
-Think of this as an open source project. How would this have to look, in order for you to be impressed with it if you were to find it on Github? Now go do that.
+Think of this as an open source project. How would this have to look in order for you to be impressed with it, if you were to find it on GitHub? Now go and do that.
 
-Try to limit the amount of time you spend on this to 90-120 minutes. However, feel free to spend more - just make sure you're happy with your submission!
+Please spend at least 90 minutes on this test. Feel free to take more time if you wish - make sure you are happy with your submission!
 
-_Hint_: we're looking for a high-quality submission with great application architecture, not a "just get it done"-like approach. Stay away from frameworks/boilerplates that handle everything for you - or use them only as a thin layer - so we can see how you structure applications yourself.  Remember that this test is your opportuniity to show us how you think, so be clear about how you're thinking in your code - whether that's with comments, tests, how you name things etc.
+_Hint_: we are looking for a high-quality submission with great application architecture. Not a "get it done" approach. Stay away from frameworks and boilerplates that handle everything for you. If you do use a framework, only use it as a thin layer so we can see how you structure applications yourself.  
+
+Remember that this test is your opportunity to show us how you think. Be clear about how you make decisions in your code, whether that is with comments, tests, or how you name things.
 
 ## What to do
 
@@ -14,25 +16,24 @@ _Hint_: we're looking for a high-quality submission with great application archi
 
 * Create a new Python-based application (any framework is fine, we prefer Flask)
 
-### If you're applying for a backend role
+### If you are applying for a backend role
+* Render the list of stores from the stores.json file in alphabetical order using a template.
+* Use postcodes.io to get the latitude and longitude for each postcode. Render them next to each store location in the template.
+* Build the functionality that allows you to return a list of stores in a given radius of a given postcode in the UK. The list must be ordered from north to south. No need to render anything, but the function needs to be unit tested.
 
-* Render the list of stores from the stores.json file in alphabetical order through a backend template
-* Use postcodes.io to get the latitude and longitude for each postcode and render them next to each store location in the template
-* Build the functionality that allows you to return a list of stores in any given radius of any given postcode in the UK ordered from north to south and unit test it - no need to render anything
-
-### If you're applying for a full stack role
-
-* Build an API that returns stores from the `stores.json` file, based on a given search string and unit test it, i.e. return "Newhaven" when searching for "hav" - make sure the search allows to use both city name and postcode
-* Order the results by matching postcode first and then matching city names, i.e. "br" would have "Orpington" as the 1st result (as its postcode is "BR5 3RP"), and then "Bracknell", "Broadstairs", "Tunbridge_Wells", and "Brentford"
-* Using your favourite frontend framework (we'd prefer Vue) on the user-facing side
-* Build a frontend that renders a text field for the query and the list of stores that match it
-* Add suggestions to the query field as you type, with a debounce effect of 100ms and a minimum of 2 characters
-* Limit the results to 3 and lazy load the rest on page scroll
+### If you are applying for a full stack role
+* Build an API that returns stores from the `stores.json` file, based on a given search string and unit test it. For example, return "Newhaven" when searching for "hav". Make sure the search allows to use both city name and postcode.
+* Order the results by matching postcode first and then matching city names. For example, "br" would have "Orpington" as the 1st result as its postcode is "BR5 3RP". Next would be "Bracknell", "Broadstairs", "Tunbridge_Wells", and "Brentford"
+* Using your favourite frontend framework (we would prefer Vue) on the user-facing side:
+  * Build a frontend that renders a text field for the query and the list of stores that match it
+  * Add suggestions to the query field as you type, with a debounce effect of 100ms and a minimum of 2 characters
+  * Limit the results to 3 and lazy load the rest on page scroll
 
 ### Finally
 
-* Zip your code up and upload it into Greenhouse (our recruitment system) using the link provided at the bottom of the email you received
-* Tell us which test you completed (backend or full-stack)
-* Tell us what you would have done differently if you'd have had more time?
-* What bits did you find the toughest? What bit are you most proud of? In both cases, why?
-* What's one thing we could do to improve this test?
+* Zip your code up and upload it to Greenhouse (our recruitment system). Use the link provided at the bottom of the email you received.
+* Provide answers for the following questions with your submission:
+  1. Which test did you complete? (backend or full-stack)
+  2. If you had chosen to spend more time on this test, what would you have done differently?
+  3. What part did you find the hardest? What part are you most proud of? In both cases, why?
+  4. What is one thing we could do to improve this test?
