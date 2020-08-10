@@ -14,7 +14,7 @@ Remember that this test is your opportunity to show us how you think. Be clear a
 
 ### First
 
-* Create a new Python-based application (any framework is fine, we prefer Flask)
+* Create a new Python-based application (any framework is fine, we prefer Flask).
 
 ### If you are applying for a backend role
 * Render the list of stores from the stores.json file in alphabetical order using a template.
@@ -23,11 +23,11 @@ Remember that this test is your opportunity to show us how you think. Be clear a
 
 ### If you are applying for a full stack role
 * Build an API that returns stores from the `stores.json` file, based on a given search string and unit test it. For example, return "Newhaven" when searching for "hav". Make sure the search allows to use both city name and postcode.
-* Order the results by matching postcode first and then matching city names. For example, "br" would have "Orpington" as the 1st result as its postcode is "BR5 3RP". Next would be "Bracknell", "Broadstairs", "Tunbridge_Wells", and "Brentford"
+* Order the results by matching postcode first and then matching city names. For example, "br" would have "Orpington" as the 1st result as its postcode is "BR5 3RP". Next would be "Bracknell", "Brentford", "Broadstairs" and "Tunbridge_Wells".
 * Using your favourite frontend framework (we would prefer Vue) on the user-facing side:
-  * Build a frontend that renders a text field for the query and the list of stores that match it
-  * Add suggestions to the query field as you type, with a debounce effect of 100ms and a minimum of 2 characters
-  * Limit the results to 3 and lazy load the rest on page scroll
+  * Build a frontend that renders a text field for the query and the list of stores that match it.
+  * Add suggestions to the query field as you type, with a debounce effect of 100ms and a minimum of 2 characters.
+  * Limit the results to 3 and lazy load the rest on page scroll.
 
 ### Finally
 
