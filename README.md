@@ -1,4 +1,4 @@
-# Tails coding test
+# Coding test for tails.com
 
 ## About this test
 
@@ -11,6 +11,8 @@ _Hint_: we are looking for a high-quality submission with great application arch
 Remember that this test is your opportunity to show us how you think. Be clear about how you make decisions in your code, whether that is with comments, tests, or how you name things.
 
 ## What to do
+
+Follow the three steps below to submit your coding test to us.
 
 ### First
 
