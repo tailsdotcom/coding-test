@@ -19,6 +19,7 @@ Follow the three steps below to submit your coding test to us.
 * Create a Docker container with a new Python-based application. Any framework is fine, we prefer Flask.
 
 ### Second
+
 #### If you are applying for a Backend Software Engineer role:
 * Render the list of stores from the `stores.json` file in alphabetical order using a template.
 * Use [Postcodes.io](https://postcodes.io) to get the latitude and longitude for each postcode. Render them next to each store location in the template.
@@ -27,7 +28,7 @@ Follow the three steps below to submit your coding test to us.
 #### If you are applying for a Full Stack Software Engineer role:
 * Build an API that returns stores from the `stores.json` file, based on a given search string and unit test it. For example, return `"Newhaven"` when searching for `"hav"`. Make sure the search allows to use both city name and postcode.
 * Order the results by matching postcode first and then matching city names. For example, `"br"` would have `"Orpington"` as the first result as its postcode is `"BR5 3RP"`. Next would be `"Bracknell"`, `"Broadstairs"`, `"Tunbridge_Wells"`, and `"Brentford"`
-* Using your favourite frontend framework (we would prefer Vue, React is also fine) on the user-facing side:
+* Using your favourite frontend framework (we prefer Vue/React) on the user-facing side:
   * Build a frontend that renders a text field for the query and the list of stores that match it
   * Add suggestions to the query field as you type, with a debounce effect of 100ms and a minimum of 2 characters
   * Limit the results to 3 and lazy load the rest on page scroll
