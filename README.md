@@ -16,7 +16,7 @@ Follow the three steps below to submit your coding test to us.
 
 ### First
 
-* Create a Docker container with a new Python-based application (any framework is fine, we prefer Flask).
+* Create a Docker container with a new Python-based application. Any framework is fine, we prefer Flask.
 
 ### Second
 #### If you are applying for a Backend Software Engineer role:
