@@ -6,7 +6,7 @@ Think of this as an open source project. How would this have to look in order fo
 
 Please spend at least 90 minutes on this test. Feel free to take more time if you wish - make sure you are happy with your submission!
 
-_Hint_: we are looking for a high-quality submission with great application architecture. Not a "get it done" approach. Stay away from frameworks and boilerplate code that handles everything for you. If you do use a framework, only use it as a thin layer, so we can see how you structure applications yourself.  
+**Hint**: we are looking for a high-quality submission with great application architecture. Not a "get it done" approach. Stay away from frameworks and boilerplate code that handle everything for you. If you do use a framework, only use it as a thin layer, so we can see how you structure applications yourself.  
 
 Remember that this test is your opportunity to show us how you think. Be clear about how you make decisions in your code, whether that is with comments, tests, or how you name things.
 
