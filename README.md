@@ -35,7 +35,7 @@ Follow the three steps below to submit your coding test to us.
 
 ### Third
 
-* Zip your code up and upload it to Greenhouse (our recruitment system). Use the link provided at the bottom of the email you received.
+* Zip your code up and upload it to us. Use the “Show Questions” button provided in the email you received. Please note - the file size should not exceed 10MB.
 * Provide answers for the following questions with your submission:
   1. Which test did you complete? (backend or full-stack)
   2. If you had chosen to spend more time on this test, what would you have done differently?
