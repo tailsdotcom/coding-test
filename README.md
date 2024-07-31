@@ -36,7 +36,7 @@ Follow the three steps below to submit your coding test to us.
 ### Third
 
 * Zip your code up and upload it to us. Use the “Show Questions” button provided in the email you received. Please note - the file size should not exceed 10MB.
-* Provide answers for the following questions with your submission:
+* Provide answers for the following questions within your zip file submission:
   1. Which test did you complete? (backend or full-stack)
   2. If you had chosen to spend more time on this test, what would you have done differently?
   3. What part did you find the hardest? What part are you most proud of? In both cases, why?
